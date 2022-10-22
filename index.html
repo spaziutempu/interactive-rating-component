@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive rating component</title>
+  </head>
+
+  <body>
+    <div class="component">
+      <div class="card">
+        <div class="component_icon">
+          <img
+            src="./images/icon-star.svg"
+            alt="a star icon"
+            class="component_star"
+          />
+        </div>
+        <h1 class="component_title">How did we do?</h1>
+        <p class="component_text">
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+
+        <form class="form">
+          <input value="1" class="radio" type="radio" name="radio" id="one" />
+          <label for="one" class="radio_label">1</label>
+          <input value="2" class="radio" type="radio" name="radio" id="two" />
+          <label for="two" class="radio_label">2</label>
+          <input value="3" class="radio" type="radio" name="radio" id="three" />
+          <label for="three" class="radio_label">3</label>
+          <input value="4" class="radio" type="radio" name="radio" id="four" />
+          <label for="four" class="radio_label">4</label>
+          <input value="5" class="radio" type="radio" name="radio" id="five" />
+          <label for="five" class="radio_label">5</label>
+        </form>
+        <button class="button" disabled>Submit</button>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --border-radius: 15px;
+  --font-family: "Overpass", sans-serif;
+  --orange: hsl(25, 97%, 53%);
+}
+body {
+  background: hsl(216, 12%, 8%);
+  color: hsl(217, 12%, 63%);
+
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  font-family: var(--font-family);
+}
+
+.component {
+  background: hsl(213, 19%, 18%);
+  margin: auto;
+  max-width: 450px;
+  width: 90%;
+  min-width: 240px;
+
+  display: flex;
+  border-radius: var(--border-radius);
+  box-shadow: 0px 5px 10px hsla(0, 0%, 0%, 0.8);
+  transition: 250ms;
+}
+
+.card {
+  margin: 1.5em auto;
+
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+
+  transition: all 250ms;
+}
+
+.thankyou {
+  align-items: center;
+}
+
+/****
+icons
+****/
+
+.component_icon {
+  margin: 1em 0 0;
+  max-width: 3em;
+  padding: 1em;
+  max-height: 3em;
+  border-radius: 50%;
+  background: hsl(214, 19%, 14%);
+}
+
+.thankyou_icon {
+  margin: 1em auto;
+  display: block;
+}
+
+/*****
+text part 
+****/
+
+.component_title {
+  margin: 0.8em 0;
+  color: white;
+  font-weight: 700;
+}
+
+.component_text {
+  text-align: left;
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
+.thankyou_text {
+  text-align: center;
+}
+
+.thankyou_note {
+  margin: 0.5em auto 0;
+  font-size: 15px;
+  background: hsl(217, 12%, 63%, 0.1);
+  color: var(--orange);
+  padding: 0.5em 1.1em;
+  border-radius: var(--border-radius);
+}
+
+/****
+radio part
+*****/
+
+.form {
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.radio {
+  visibility: hidden;
+  position: absolute;
+  width: 1px;
+}
+
+.radio_label {
+  margin: 1.5em auto;
+  background: hsl(214, 19%, 14%);
+  cursor: pointer;
+
+  width: 3.5em;
+  height: 3.5em;
+  text-align: center;
+  line-height: 3.5em;
+
+  border-radius: 50%;
+  transition: 250ms;
+}
+
+.radio:checked + .radio_label {
+  background: var(--orange);
+  color: white;
+  box-shadow: 0px 0px 6px 2px hsl(25deg 97% 53% / 80%);
+}
+
+.radio_label:hover,
+.radio_label:active,
+.radio_label:focus {
+  background: hsl(216, 12%, 54%);
+  color: white;
+  box-shadow: 0px 0px 6px 2px hsl(216, 12%, 54%);
+}
+
+/****** 
+button part  
+******/
+
+button {
+  font-weight: 700;
+  letter-spacing: 1.5px;
+
+  background: var(--orange);
+
+  padding: 0.8em 0;
+  transition: 150ms;
+
+  color: white;
+
+  border: none;
+  border-radius: var(--border-radius);
+  text-transform: uppercase;
+}
+
+button:disabled {
+  background: hsl(25deg 97% 53% / 80%);
+}
+
+button:disabled:hover {
+  background: rgba(255, 6, 6, 0.327);
+  box-shadow: 0px 0px 6px rgba(255, 6, 6, 1);
+  color: white;
+  animation: forbiden 500ms;
+  cursor: not-allowed;
+}
+
+.active {
+  background: white;
+  color: var(--orange);
+  cursor: pointer;
+  transition: 150ms;
+}
+.active:hover,
+.active:focus {
+  background: var(--orange);
+  color: white;
+  transform: scale(1.04);
+  box-shadow: 0px 0px 6px 0px hsl(25deg 97% 53% / 80%);
+}
+
+/*****
+animation
+****/
+
+@keyframes forbiden {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-0.5em);
+  }
+  40% {
+    transform: translateX(0.5em);
+  }
+  60% {
+    transform: translateX(-0.5em);
+  }
+  80% {
+    transform: translateX(0.5em);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/***** 
+media queries
+*****/
+
+@media (max-width: 370px) {
+  .radio_label {
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+  }
+}
